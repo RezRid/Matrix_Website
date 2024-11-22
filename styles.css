@@ -20,18 +20,21 @@ body, html {
 }
 
 h1 {
+    
     text-align: center;
     color: white;
     margin-top: 50px;
 }
 
 .tabl {
+    border: 1px solid #0F0;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin: 0 auto;
     padding: 1rem;
-    background-color: rgba(189, 220, 255, 0.6);
+    background-color: rgba(43, 43, 43, 0.6);
     border-radius: 10px;
     max-width: 60%;
     z-index: 1;
@@ -40,12 +43,15 @@ h1 {
 
 .card {
     margin: 1rem;
+    color: #53f76e;
     padding: 1rem;
     border-radius: 5px;
     max-height: 30vh;
     width: 30vh;
-    background-color: #80bbfd;
-    box-shadow: 2px 2px 10px #80bbfd;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #0F0; /* Зеленый текст */
+    border: 2px solid #0F0;
+    box-shadow: 0 0 20px #0F0;
     word-wrap: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -54,11 +60,12 @@ h1 {
 }
 
 .card:hover {
-    box-shadow: -5px -5px 10px #4c9ffd;
+    box-shadow: -5px -5px 10px #4cfd5b;
 }
 
 .cardtitle {
-    color: #e6e6e6;
+    color: #0F0;
+    animation: glow 1.5s infinite;
     text-align: center;
     margin: 1rem auto;
 }
@@ -67,7 +74,15 @@ p {
     text-align: left;
 }
 
-@media screen and (max-width: 800px) {
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 5px #0F0, 0 0 10px #0F0; }
+    50% { text-shadow: 0 0 20px #0F0, 0 0 30px #0F0; }
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@media screen and (max-width: 800px)
+ {
     .card {
         font-size: smaller;
     }
